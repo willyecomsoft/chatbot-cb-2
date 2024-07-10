@@ -28,7 +28,7 @@
             "source_collection": "raw",
             "metadata_bucket": "ai",
             "metadata_scope": "meta",
-            "metadata_collection": "_default"
+            "metadata_collection": "data"
         },
         "version": "",
         "enforce_schema": false,

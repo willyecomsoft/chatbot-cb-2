@@ -94,7 +94,7 @@ if BUCKET_MAIN_ID is not None:
     scope_raw_created = create_scope(BUCKET_MAIN_ID, "raw", "ai")
     scope_data_created = create_scope(BUCKET_MAIN_ID, "data", "ai")
     scope_chats_created = create_scope(BUCKET_MAIN_ID, "chats", "ai")
-    scope_chats_created = create_scope(BUCKET_MAIN_ID, "meta", "ai")
+    scope_meta_created = create_scope(BUCKET_MAIN_ID, "meta", "ai")
     
     if scope_raw_created:
         create_collection(BUCKET_MAIN_ID, "ai", "raw", "raw")
@@ -107,6 +107,9 @@ if BUCKET_MAIN_ID is not None:
     if scope_chats_created:
         create_collection(BUCKET_MAIN_ID, "ai", "chats", "human")
         create_collection(BUCKET_MAIN_ID, "ai", "chats", "bot")
+
+    if scope_meta_created:
+        create_collection(BUCKET_MAIN_ID, "ai", "meta", "data")
 
 print("Done setting up data structures..")
 
