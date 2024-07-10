@@ -5,7 +5,7 @@
             "buckets": [
                 {
                     "alias": "target",
-                    "bucket_name": "main",
+                    "bucket_name": "ai",
                     "scope_name": "raw",
                     "collection_name": "formatted",
                     "access": "rw"
@@ -23,11 +23,11 @@
                     "validate_ssl_certificate": false
                 }
             ],
-            "source_bucket": "main",
+            "source_bucket": "ai",
             "source_scope": "raw",
             "source_collection": "raw",
-            "metadata_bucket": "meta",
-            "metadata_scope": "_default",
+            "metadata_bucket": "ai",
+            "metadata_scope": "meta",
             "metadata_collection": "_default"
         },
         "version": "",
