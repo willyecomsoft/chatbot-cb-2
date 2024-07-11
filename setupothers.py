@@ -65,7 +65,7 @@ def import_function(function_name):
 
 import_function("reformatting")
 import_function("metadata_labelling")
-#import_function("embedding")
+import_function("embedding")
 
 
 #setup fts index
