@@ -5,21 +5,21 @@
             "buckets": [
                 {
                     "alias": "target_products",
-                    "bucket_name": "main",
+                    "bucket_name": "ai",
                     "scope_name": "data",
                     "collection_name": "products",
                     "access": "rw"
                 },
                 {
                     "alias": "target_policies",
-                    "bucket_name": "main",
+                    "bucket_name": "ai",
                     "scope_name": "data",
                     "collection_name": "policies",
                     "access": "rw"
                 },
                 {
                     "alias": "target_self",
-                    "bucket_name": "main",
+                    "bucket_name": "ai",
                     "scope_name": "raw",
                     "collection_name": "formatted",
                     "access": "rw"
@@ -37,12 +37,12 @@
                     "validate_ssl_certificate": false
                 }
             ],
-            "source_bucket": "main",
+            "source_bucket": "ai",
             "source_scope": "raw",
             "source_collection": "formatted",
-            "metadata_bucket": "meta",
-            "metadata_scope": "_default",
-            "metadata_collection": "_default"
+            "metadata_bucket": "ai",
+            "metadata_scope": "meta",
+            "metadata_collection": "data"
         },
         "version": "evt-7.6.1-3202-ee",
         "enforce_schema": false,
