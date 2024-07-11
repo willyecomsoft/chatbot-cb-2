@@ -2,7 +2,7 @@
   "type": "fulltext-index",
   "name": "embedding-index",
   "sourceType": "gocbcore",
-  "sourceName": "main",
+  "sourceName": "ai",
   "planParams": {
     "maxPartitionsPerPIndex": 1024,
     "indexPartitions": 1
