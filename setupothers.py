@@ -76,7 +76,7 @@ def import_fts_index():
     print(f"Importing fts index...")
     
     try:
-        url = f"http://{SEARCH_HOSTNAME}:8094/api/bucket/main/scope/data/index/embedding-index"
+        url = f"http://{SEARCH_HOSTNAME}:8094/api/bucket/ai/scope/data/index/embedding-index"
         with open(f'./templates/assets/fts-index.json', 'r') as file:
             data = json.load(file)
             requests.put(url, auth=(CB_USERNAME, CB_PASSWORD), json=data)

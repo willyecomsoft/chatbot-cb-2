@@ -100,6 +100,7 @@ def handle_message(msg_to_process):
     documents = []
     
     for row in result.rows():
+        print(f"Row.. {row}")
         product_ids.append(row.id)
         
         additional_context += row.fields['assembled_for_embedding'] + "\n"

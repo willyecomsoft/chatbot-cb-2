@@ -9,7 +9,7 @@ import couchbase.subdocument as SD
 load_dotenv()
 
 def cb_vector_search(cluster, embedding_field, vector, key_context_field): 
-    bucket = cluster.bucket("main")
+    bucket = cluster.bucket("ai")
     scope = bucket.scope("data")
     search_index = "embedding-index"
     search_req = search.SearchRequest.create(search.MatchNoneQuery()).with_vector_search(
@@ -19,7 +19,7 @@ def cb_vector_search(cluster, embedding_field, vector, key_context_field):
 
 def insert_user_message(cluster, query, transformed_query, deviceType, browserType): 
     
-    chat_collection = cluster.bucket("main").scope("chats").collection("human")   
+    chat_collection = cluster.bucket("ai").scope("chats").collection("human")   
     
     try:
         uuid_to_insert = str(generate_uuid())
@@ -49,7 +49,7 @@ def insert_user_message(cluster, query, transformed_query, deviceType, browserTy
 
 
 def insert_bot_message(cluster, message, user_msg_id, product_ids): 
-    chat_collection = cluster.bucket("main").scope("chats").collection("bot")   
+    chat_collection = cluster.bucket("ai").scope("chats").collection("bot")   
     
     try:
         uuid_to_insert = str(generate_uuid())
@@ -76,7 +76,7 @@ def insert_bot_message(cluster, message, user_msg_id, product_ids):
 
 def update_bot_message_rating(cluster, bot_msg_id, rating):
     print("UPDATING RATING", bot_msg_id, rating)
-    chat_collection = cluster.bucket("main").scope("chats").collection("bot")   
+    chat_collection = cluster.bucket("ai").scope("chats").collection("bot")   
     
     try:        
         chat_collection.mutate_in(bot_msg_id, [SD.upsert("rating", rating)])

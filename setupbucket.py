@@ -85,27 +85,31 @@ def create_collection(bucket_id, bucket_name, scope_name, collection_name):
 
 
 #create bucket main 
-BUCKET_MAIN_ID = create_bucket("main", 2000)
+BUCKET_MAIN_ID = create_bucket("ai", 200)
 
 #create bucket meta
-create_bucket("meta", 1000)
+#create_bucket("meta", 1000)
 
 if BUCKET_MAIN_ID is not None:
-    scope_raw_created = create_scope(BUCKET_MAIN_ID, "raw", "main")
-    scope_data_created = create_scope(BUCKET_MAIN_ID, "data", "main")
-    scope_chats_created = create_scope(BUCKET_MAIN_ID, "chats", "main")
+    scope_raw_created = create_scope(BUCKET_MAIN_ID, "raw", "ai")
+    scope_data_created = create_scope(BUCKET_MAIN_ID, "data", "ai")
+    scope_chats_created = create_scope(BUCKET_MAIN_ID, "chats", "ai")
+    scope_meta_created = create_scope(BUCKET_MAIN_ID, "meta", "ai")
     
     if scope_raw_created:
-        create_collection(BUCKET_MAIN_ID, "main", "raw", "raw")
-        create_collection(BUCKET_MAIN_ID, "main", "raw", "formatted")
+        create_collection(BUCKET_MAIN_ID, "ai", "raw", "raw")
+        create_collection(BUCKET_MAIN_ID, "ai", "raw", "formatted")
     
     if scope_data_created:
-        create_collection(BUCKET_MAIN_ID, "main", "data", "products")
-        create_collection(BUCKET_MAIN_ID, "main", "data", "policies")
+        create_collection(BUCKET_MAIN_ID, "ai", "data", "products")
+        create_collection(BUCKET_MAIN_ID, "ai", "data", "policies")
         
     if scope_chats_created:
-        create_collection(BUCKET_MAIN_ID, "main", "chats", "human")
-        create_collection(BUCKET_MAIN_ID, "main", "chats", "bot")
+        create_collection(BUCKET_MAIN_ID, "ai", "chats", "human")
+        create_collection(BUCKET_MAIN_ID, "ai", "chats", "bot")
+
+    if scope_meta_created:
+        create_collection(BUCKET_MAIN_ID, "ai", "meta", "data")
 
 print("Done setting up data structures..")
 
