@@ -64,7 +64,7 @@ def import_function(function_name):
         print(f"Error importing function {function_name}: {str(e)}")
 
 import_function("reformatting")
-#import_function("metadata_labelling")
+import_function("metadata_labelling")
 #import_function("embedding")
 
 
