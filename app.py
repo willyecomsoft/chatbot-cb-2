@@ -88,11 +88,11 @@ def handle_message(msg_to_process):
     
     #2. turn it into an embedding
     vector = create_openai_embeddings(new_query)
-    print(f"Generated vector.. {vector}")
+    print(f"Generated vector..")
    
     #3. using Couchbase SDK  
     result = cb_vector_search(cluster, "embedding", vector, 'assembled_for_embedding')
-    print(f"Search result retrieved.. {result}")
+    print(f"Search result retrieved..")
     
     #4. parsing the results
     product_ids = []
@@ -100,6 +100,7 @@ def handle_message(msg_to_process):
     documents = []
     
     for row in result.rows():
+        print(f"Row.. {row}")
         product_ids.append(row.id)
         
         additional_context += row.fields['assembled_for_embedding'] + "\n"
